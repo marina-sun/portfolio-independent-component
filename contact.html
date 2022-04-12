@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Link to the favicon image -->
+	<link rel="icon" href="images/favicon.ico">
+	<!-- Link to the reset file -->
+	<link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/d2873d4693.js" crossorigin="anonymous"></script>
+	<title>Contact</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E22Z7NF2FL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-E22Z7NF2FL');
+    </script>
+</head>
+
+<body>
+    <!--Skip to Main Content -->
+	<a class = "skip" href="#main">Skip to Main Content</a>
+    <header>
+        <nav>
+            <ul class="nav_links">
+                <li><a href = "index.html" >Guide to Pasta Shapes</a></li>
+                <li><a href = "ribbon-soup-pasta.html" >Ribbon and Soup Pasta</a></li>
+                <li><a href = "shaped-pasta.html" >Shaped Pasta</a></li>
+                <li><a href = "tubular-pasta.html" >Tubular Pasta</a></li>
+                <li class="active"><a href = "contact.html" >Learn More</a></li>
+            </ul>
+        </nav>
+        <div class="intro">
+            <h1 id="main">Learn More!</h1>
+            <hr>
+            <p>Leave any questions or comments below!</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="dropdown_container">
+            <h2>Recipe Recommender!</h2>
+            <p>Type or select a pasta shape from the dropmen menu below, and you will be redirected to a recipe featuring that pasta shape!</p>
+            <div class="dropdown">
+                <button onclick="dropFunction()" class="dropdown_button">Dropdown</button>
+                <div id="myDropdown" class="dropdown_content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="https://poshplate.us/ditalini-pasta-recipe/">Ditalini</a>
+                    <a href="https://juliasalbum.com/farfalle-with-spinach-mushrooms-caramelized-onions/">Farfalle</a>
+                    <a href="https://familystylefood.com/cascatelli-pesto-pasta/">Cascatelli</a>
+                    <a href="https://www.themediterraneandish.com/orzo-pasta-recipe/">Orzo</a>
+                    <a href="https://app.ckbk.com/recipe/ital32409c06s001r006/anelli-ammuddicati">Anelli</a>
+                    <a href="https://www.loveandlemons.com/orecchiette-with-broccoli-rabe/">Orecchiette</a>
+                    <a href="https://www.marthastewart.com/978844/rotelle-onions-cucumbers-and-herbs">Rotelle</a>
+                </div>
+            </div>
+        </div>
+
+          <script>
+            function dropFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            function filterFunction() {
+              var input, filter, ul, li, a, i;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              div = document.getElementById("myDropdown");
+              a = div.getElementsByTagName("a");
+              for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  a[i].style.display = "";
+                } else {
+                  a[i].style.display = "none";
+                }
+              }
+            }
+            </script>
+
+        <h2>About Me</h2>
+        <div class="flipcard" tabindex="0">
+            <div class="flipcard_content">
+                <div class="flipcard_front"><img src = "images/Sun_Marina_Headshot.JPG" alt="Marina Sun Headshot." width="100"></div>
+                <div class="flipcard_back">Hi there! My name is Marina, and I'm a student at the University of Michigan who loves pasta.</div>
+            </div>
+        </div>
+
+        <h2>Contact Me</h2>
+        <div class="form">
+            <form
+                action="https://formspree.io/f/xjvloqlb"
+                method="POST"
+                class="form"
+            >
+                <fieldset>
+                    <i class="fa-solid fa-person"></i>
+                    <label for="name">First Name:</label>
+                        <input type="text" class="entry" placeholder="First Name"><br>
+                    <i class="fa-solid fa-person"></i>
+                    <label for="name">Last Name:</label>
+                        <input type="text" class="entry" placeholder="Last Name"><br>
+                    <i class="fa-solid fa-envelope"></i>
+                    <label>Email:</label>
+                        <input type="email" class="entry" placeholder="uniqname@umich.edu" name="address"><br>
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <label>Message:</label>
+                        <textarea type="message entry" class="entry" placeholder="Message"></textarea><br>
+                    <button type="submit" class="submit">Submit!</button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <i class="fa-solid fa-utensils"></i>
+        <p>Marina Sun &copy; 2022</p>
+    </footer>
+</body>
